@@ -2,7 +2,11 @@
 
 int test_volatile(void)
 {
+	#ifdef USE_VOLATILE
 	volatile uint32_t *reg_a = (uint32_t *)0x40023800;
+	#else
+	uint32_t *reg_a = (uint32_t *)0x40023800;
+	#endif
 
 	uint32_t val1;
 	uint32_t val2;
